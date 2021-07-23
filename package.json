@@ -1,6 +1,6 @@
 {
   "name": "bnc-onboard",
-  "version": "1.29.0-0.5.8",
+  "version": "1.29.0-0.5.10",
   "description": "Onboard users to web3 by allowing them to select a wallet, get that wallet ready to transact and have access to synced wallet state.",
   "keywords": [
     "ethereum",
@@ -23,7 +23,7 @@
   "scripts": {
     "build": "rimraf dist && rollup -c && babel dist/cjs --out-dir dist/cjs && babel dist/esm --out-dir dist/esm",
     "test": "echo \"TBD\" && exit 0",
-    "prepare": "npm run build",
+    "prepare": "npm run build && is-ci || husky install",
     "lint": "eslint 'src/**/*.ts' && prettier --check {'src/**/*.ts','src/**/*.svelte'}",
     "lint:fix": "eslint 'src/**/*.ts' --fix",
     "format": "prettier --write {'src/**/*.ts','src/**/*.svelte'}"
@@ -42,6 +42,8 @@
     "babel-plugin-external-helpers": "^6.18.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.0",
+    "is-ci": "^3.0.0",
     "prettier": "^2.0.5",
     "prettier-plugin-svelte": "^2.2.0",
     "rimraf": "^3.0.0",

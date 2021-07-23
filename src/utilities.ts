@@ -84,7 +84,7 @@ export async function getEns(provider: any, address: string): Promise<Ens> {
     }
   } catch (e) {
     // Error getting ens name
-    return {}
+          return {}
   }
 }
 
